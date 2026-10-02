@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEO-KINETIC // Cybernetic Sportswear 2026</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    
+</head>
+<body>
+
+    <!-- 100% OPACITY BACKGROUND VIDEO (NO DARK OVERLAYS) -->
+    <div id="video-container">
+        <video id="bg-video" muted playsinline preload="auto">
+            <source src="assets/video/campaign-scroll.mp4?v=1" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <!-- HUD NAVBAR -->
+    <header>
+        <div class="logo">
+            <span class="glow-text">NEO-KINETIC</span>
+            <span class="logo-badge">FW26</span>
+        </div>
+        <nav id="siteNavigation">
+            <ul>
+                <li><a href="#hero">Overview</a></li>
+                <li><a href="#catalog">Collection</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <button class="menu-toggle" id="mobileMenuBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="siteNavigation">
+                <span></span><span></span><span></span>
+            </button>
+            <button class="cart-trigger" id="openCartBtn">
+                🛒 <span class="cart-count" id="cartBadge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO OVERLAY -->
+    <section id="hero">
+        <div class="glass-panel hero-hud-card">
+            <div class="system-label">// SYSTEM OPERATIONAL</div>
+            <h1 class="hero-title">AERO-DRIFT<br><span>SPORTSWEAR</span></h1>
+            <p class="hero-copy">
+                Engineered for maximum velocity and environmental dynamic response. Seamlessly blending volumetric tulle construction with micro-kinetic drift telemetry.
+            </p>
+            
+            <div class="telemetry-bar">
+                <div>SCROLL SCRUB: <span id="telemetryScroll">0%</span></div>
+                <div>FRAME TIME: <span id="telemetryTime">0.00s</span></div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#catalog" class="btn-cyber hero-cta">EXPLORE GEAR</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: E-COMMERCE PRODUCT CATALOG -->
+    <section id="catalog">
+        <div class="catalog-header">
+            <div>
+                <h2 class="catalog-title">GEAR DEPLOYMENT</h2>
+                <p class="catalog-description">Select telemetry equipment for immediate dispatch.</p>
+            </div>
+            <div class="filter-tags">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">ALL</button>
+                <button class="filter-btn" data-filter="outerwear" aria-pressed="false">OUTERWEAR</button>
+                <button class="filter-btn" data-filter="footwear" aria-pressed="false">FOOTWEAR</button>
+                <button class="filter-btn" data-filter="accessories" aria-pressed="false">ACCESSORIES</button>
+            </div>
+        </div>
+
+        <div class="catalog-tools">
+            <label class="sr-only" for="productSearch">Search the collection</label>
+            <input id="productSearch" type="search" placeholder="Search the collection...">
+            <label class="sr-only" for="productSort">Sort products</label>
+            <select id="productSort">
+                <option value="featured">Sort: Featured</option>
+                <option value="price-asc">Price: Low to high</option>
+                <option value="price-desc">Price: High to low</option>
+                <option value="name">Name: A to Z</option>
+            </select>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <!-- Dynamic Injection via JavaScript -->
+        </div>
+    </section>
+
+    <footer class="site-footer" id="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a class="logo glow-text footer-brand-link" href="#hero">NEO-KINETIC <span class="logo-badge">FW26</span></a>
+                <p>Technical layers for movement beyond the expected. Designed for the next shift in sport and street.</p>
+            </div>
+            <div>
+                <h2 class="footer-title">COLLECTION</h2>
+                <ul class="footer-links">
+                    <li><a href="#catalog" data-footer-filter="all">All equipment</a></li>
+                    <li><a href="#catalog" data-footer-filter="outerwear">Outerwear</a></li>
+                    <li><a href="#catalog" data-footer-filter="footwear">Footwear</a></li>
+                    <li><a href="#catalog" data-footer-filter="accessories">Accessories</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="footer-title">SUPPORT</h2>
+                <ul class="footer-links">
+                    <li><a href="#footer" data-store-info="contact">Contact the team</a></li>
+                    <li><a href="#footer" data-store-info="shipping">Shipping &amp; returns</a></li>
+                    <li><a href="#footer" data-store-info="size">Size guide</a></li>
+                    <li><a href="#footer" data-store-info="faq">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h2 class="footer-title">SIGNAL INCOMING</h2>
+                <p>Get first access to new releases and field notes.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <label for="newsletterEmail" class="sr-only">Email address</label>
+                    <input id="newsletterEmail" type="email" placeholder="Email address" autocomplete="email" required>
+                    <button type="submit">SIGN UP</button>
+                </form>
+                <p class="newsletter-status" id="newsletterStatus" aria-live="polite"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 NEO-KINETIC. FRONT-END STORE DEMO.</span>
+            <span><a href="#footer" data-store-info="privacy">Privacy</a> &nbsp; / &nbsp; <a href="#footer" data-store-info="terms">Terms</a></span>
+        </div>
+    </footer>
+
+    <!-- SLIDE-OVER CART DRAWER -->
+    <div class="glass-panel cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>CYBER CART [<span id="cartCountHeader">0</span>]</h3>
+            <button class="close-cart" id="closeCartBtn">&times;</button>
+        </div>
+
+        <div class="cart-items" id="cartItemsContainer">
+            <p class="cart-empty">Cart buffer empty.</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-summary-row"><span>SUBTOTAL</span><span id="cartSubtotalValue">$0.00</span></div>
+            <div class="cart-summary-row"><span>SHIPPING (DEMO RATE)</span><span id="cartShippingValue">$0.00</span></div>
+            <div class="cart-total">
+                <span>TOTAL:</span>
+                <span class="cart-total-value" id="cartTotalValue">$0.00</span>
+            </div>
+            <button class="btn-cyber cart-checkout" id="checkoutBtn">CONTINUE TO CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- QUICK VIEW / CHECKOUT MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="glass-panel modal-content" id="modalInner">
+            <button class="close-modal" id="closeModalBtn">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- SCRIPT MECHANICS -->
+    <script src="js/products.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
